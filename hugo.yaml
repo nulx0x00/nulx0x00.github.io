@@ -1,7 +1,7 @@
 baseURL: "https://nulx0x00.github.io/"
 languageCode: "en-us"
 title: "nulx0x00"
-theme: "terminal"
+theme: "PaperMod"
 
 # Pagination
 paginate: 4
