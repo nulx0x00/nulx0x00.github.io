@@ -3,11 +3,9 @@ languageCode: "en-us"
 title: "nulx0x00"
 theme: "PaperMod"
 
-#pagination:
-pagerSize: 10
+pagination:
+  pagerSize: 10
 
-
-# Security settings for Hugo
 security:
   exec:
     allow:
@@ -17,45 +15,41 @@ security:
       - '^postcss$'
 
 params:
-  # Theme color scheme
-  themeColor: "blue"  # Terminal green for matrix-style aesthetic
-  
-  # Brand and identity
+  themeColor: "blue"
+
   contentTypeName: "posts"
   showMenuItems: 4
   fullWidthTheme: true
   centerTheme: false
-  
-  # Author info
+
   author: "nulx0x00"
   description: "Logic Researcher & Security Tool Builder - Revealing the Low-Level Truths of Security"
-  keywords: "cybersecurity, penetration testing, OSI model, python security tools, offensive security, PII discovery"
-  
-  # Logo and branding
+
+  keywords:
+    - cybersecurity
+    - penetration testing
+    - OSI model
+    - python security tools
+    - offensive security
+    - PII discovery
+
   logo:
     logoText: "nulx0:~$"
     logoHomeLink: "/"
-  
-  # Custom copyright
+
   copyright: "© 2024-2025 nulx0x00 | Stripping Security Myths"
-  
-  # Show reading time
+
   showReadingTime: true
-  
-  # Show table of contents
   showTableOfContents: true
-  
-  # Social media links
+
   social:
     - name: "github"
       url: "https://github.com/nulx0x00"
     - name: "email"
-      url: "mailto:vanshnavyavn@gmail.com"  # Update with your email
-  
-  # Directory config
+      url: "mailto:vanshnavyavn@gmail.com"
+
   dir: "ltr"
 
-# Main menu configuration
 menu:
   main:
     - identifier: "root"
@@ -75,56 +69,29 @@ menu:
       url: "/about/"
       weight: 4
 
-# Markup configuration
 markup:
   goldmark:
     renderer:
-      unsafe: true  # Allow HTML in markdown
+      unsafe: true
   highlight:
-    anchorLineNos: false
-    codeFences: true
-    guessSyntax: false
-    hl_Lines: ""
-    lineAnchors: ""
-    lineNoStart: 1
+    style: "monokai"
     lineNos: true
-    lineNumbersInTable: true
-    noClasses: false
-    style: "monokai"  # Dark syntax highlighting
-    tabWidth: 4
-  tableOfContents:
-    endLevel: 6
-    ordered: false
-    startLevel: 2
 
-# Taxonomies
 taxonomies:
   tag: "tags"
   category: "categories"
 
-# Output formats
 outputs:
   home:
     - HTML
     - RSS
-    - JSON
 
-# Privacy settings
 privacy:
   disqus:
     disable: true
   googleAnalytics:
     disable: true
-  instagram:
-    disable: false
-  twitter:
-    disable: false
-  vimeo:
-    disable: true
-  youtube:
-    disable: false
 
-# Permalinks
 permalinks:
   posts: "/:year/:month/:title/"
   lab: "/lab/:title/"
