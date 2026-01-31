@@ -3,8 +3,9 @@ languageCode: "en-us"
 title: "nulx0x00"
 theme: "PaperMod"
 
-# Pagination
-paginate: 4
+#pagination:
+pagerSize: 10
+
 
 # Security settings for Hugo
 security:

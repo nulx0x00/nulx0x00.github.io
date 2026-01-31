@@ -1,0 +1,77 @@
+/* Custom Responsive Layout - nulx0x00 Portfolio */
+
+/* Make container use more screen width */
+.container {
+    max-width: 1200px !important;
+    width: 60% !important;
+    margin: 0 auto;
+}
+
+/* Better content width */
+.content {
+    max-width: 75% !important;
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 75% !important;
+        padding: 0 10px;
+    }
+    
+    /* Stack menu items on mobile */
+    .menu {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        width: 65% !important;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .container {
+        width: 65% !important;
+        max-width: 1400px !important;
+    }
+}
+
+/* Better code blocks on all screens */
+pre {
+    overflow-x: auto;
+    max-width: 75%;
+}
+
+/* Responsive images */
+img {
+    max-width: 75%;
+    height: auto;
+}
+
+/* Better table responsiveness */
+table {
+    display: block;
+    overflow-x: auto;
+    width: 75%;
+}
+
+/* Adjust ASCII art for smaller screens */
+@media screen and (max-width: 768px) {
+    pre code {
+        font-size: 8px;
+        line-height: 1.2;
+    }
+}
+
+/* Better spacing on larger screens */
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1600px !important;
+    }
+    
+    body {
+        font-size: 18px;
+    }
+}
