@@ -22,7 +22,7 @@ params:
   # Brand and identity
   contentTypeName: "posts"
   showMenuItems: 4
-  fullWidthTheme: true
+  fullWidthTheme: false
   centerTheme: false
   
   # Author info
