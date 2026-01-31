@@ -1,0 +1,129 @@
+baseURL: "https://pr0jzer0.github.io/"
+languageCode: "en-us"
+title: "nulx0x00"
+theme: "terminal"
+
+# Pagination
+paginate: 5
+
+# Security settings for Hugo
+security:
+  exec:
+    allow:
+      - '^dart-sass-embedded$'
+      - '^go$'
+      - '^npx$'
+      - '^postcss$'
+
+params:
+  # Theme color scheme
+  themeColor: "green"  # Terminal green for matrix-style aesthetic
+  
+  # Brand and identity
+  contentTypeName: "posts"
+  showMenuItems: 4
+  fullWidthTheme: false
+  centerTheme: true
+  
+  # Author info
+  author: "nulx0x00"
+  description: "Logic Researcher & Security Tool Builder - Revealing the Low-Level Truths of Security"
+  keywords: "cybersecurity, penetration testing, OSI model, python security tools, offensive security, PII discovery"
+  
+  # Logo and branding
+  logo:
+    logoText: "nulx0x00:~$"
+    logoHomeLink: "/"
+  
+  # Custom copyright
+  copyright: "© 2024-2025 nulx0x00 | Stripping Security Myths"
+  
+  # Show reading time
+  showReadingTime: true
+  
+  # Show table of contents
+  showTableOfContents: true
+  
+  # Social media links
+  social:
+    - name: "github"
+      url: "https://github.com/pr0jzer0"
+    - name: "email"
+      url: "mailto:your-email@protonmail.com"  # Update with your email
+  
+  # Directory config
+  dir: "ltr"
+
+# Main menu configuration
+menu:
+  main:
+    - identifier: "root"
+      name: "/root"
+      url: "/root/"
+      weight: 1
+    - identifier: "lab"
+      name: "/lab"
+      url: "/lab/"
+      weight: 2
+    - identifier: "sieve"
+      name: "/sieve"
+      url: "/sieve/"
+      weight: 3
+    - identifier: "about"
+      name: "/whoami"
+      url: "/about/"
+      weight: 4
+
+# Markup configuration
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # Allow HTML in markdown
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: false
+    style: "monokai"  # Dark syntax highlighting
+    tabWidth: 4
+  tableOfContents:
+    endLevel: 6
+    ordered: false
+    startLevel: 2
+
+# Taxonomies
+taxonomies:
+  tag: "tags"
+  category: "categories"
+
+# Output formats
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# Privacy settings
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: false
+  vimeo:
+    disable: true
+  youtube:
+    disable: false
+
+# Permalinks
+permalinks:
+  posts: "/:year/:month/:title/"
+  lab: "/lab/:title/"
