@@ -22,8 +22,8 @@ params:
   # Brand and identity
   contentTypeName: "posts"
   showMenuItems: 4
-  fullWidthTheme: false
-  centerTheme: true
+  fullWidthTheme: true
+  centerTheme: false
   
   # Author info
   author: "nulx0x00"
