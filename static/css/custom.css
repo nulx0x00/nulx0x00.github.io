@@ -3,19 +3,19 @@
 /* Make container use more screen width */
 .container {
     max-width: 1200px !important;
-    width: 95% !important;
+    width: 60% !important;
     margin: 0 auto;
 }
 
 /* Better content width */
 .content {
-    max-width: 100% !important;
+    max-width: 75% !important;
 }
 
 /* Responsive breakpoints */
 @media screen and (max-width: 768px) {
     .container {
-        width: 98% !important;
+        width: 75% !important;
         padding: 0 10px;
     }
     
@@ -27,13 +27,13 @@
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .container {
-        width: 90% !important;
+        width: 65% !important;
     }
 }
 
 @media screen and (min-width: 1025px) {
     .container {
-        width: 85% !important;
+        width: 65% !important;
         max-width: 1400px !important;
     }
 }
@@ -41,12 +41,12 @@
 /* Better code blocks on all screens */
 pre {
     overflow-x: auto;
-    max-width: 100%;
+    max-width: 75%;
 }
 
 /* Responsive images */
 img {
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
 }
 
@@ -54,7 +54,7 @@ img {
 table {
     display: block;
     overflow-x: auto;
-    width: 100%;
+    width: 75%;
 }
 
 /* Adjust ASCII art for smaller screens */
