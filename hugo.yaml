@@ -4,7 +4,7 @@ title: "nulx0x00"
 theme: "terminal"
 
 # Pagination
-paginate: 5
+paginate: 4
 
 # Security settings for Hugo
 security:
@@ -17,7 +17,7 @@ security:
 
 params:
   # Theme color scheme
-  themeColor: "green"  # Terminal green for matrix-style aesthetic
+  themeColor: "blue"  # Terminal green for matrix-style aesthetic
   
   # Brand and identity
   contentTypeName: "posts"
@@ -115,7 +115,7 @@ privacy:
   googleAnalytics:
     disable: true
   instagram:
-    disable: true
+    disable: false
   twitter:
     disable: false
   vimeo:
