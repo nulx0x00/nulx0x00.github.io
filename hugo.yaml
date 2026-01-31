@@ -1,4 +1,4 @@
-baseURL: "https://pr0jzer0.github.io/"
+baseURL: "https://nulx0x00.github.io/"
 languageCode: "en-us"
 title: "nulx0x00"
 theme: "terminal"
@@ -32,7 +32,7 @@ params:
   
   # Logo and branding
   logo:
-    logoText: "nulx0x00:~$"
+    logoText: "nulx0:~$"
     logoHomeLink: "/"
   
   # Custom copyright
@@ -47,9 +47,9 @@ params:
   # Social media links
   social:
     - name: "github"
-      url: "https://github.com/pr0jzer0"
+      url: "https://github.com/nulx0x00"
     - name: "email"
-      url: "mailto:your-email@protonmail.com"  # Update with your email
+      url: "mailto:vanshnavyavn@gmail.com"  # Update with your email
   
   # Directory config
   dir: "ltr"
