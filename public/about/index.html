@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>/whoami | NULx0</title>
+<meta name="keywords" content="">
+<meta name="description" content="nulx0x00:~$ whoami
+I strip away security myths and build tools that operate at the low level—where real vulnerabilities live. No corporate gloss. No vendor FUD. Just raw technical truth.
+&gt; What I Do
+Logic Research: I dissect security concepts down to their OSI model foundations. If you&rsquo;ve ever wondered why a security control actually works (or doesn&rsquo;t), that&rsquo;s where I operate.
+Tool Building: I build offensive security tools in Python that solve real problems—not proof-of-concepts that die in GitHub repos. Currently focused on automated reconnaissance and data exposure analysis.">
+<meta name="author" content="nulx0x00">
+<link rel="canonical" href="https://nulx0x00.github.io/about/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc9694f5ff4d1e4cc1b71973c921f46383a190d0b85d9c9268244035995c7e22.css" integrity="sha256-vJaU9f9NHkzBtxlzySH0Y4OhkNC4XZySaCRANZlcfiI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://nulx0x00.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nulx0x00.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nulx0x00.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://nulx0x00.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://nulx0x00.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://nulx0x00.github.io/about/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://nulx0x00.github.io/about/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://nulx0x00.github.io/about/">
+  <meta property="og:site_name" content="NULx0">
+  <meta property="og:title" content="/whoami">
+  <meta property="og:description" content="nulx0x00:~$ whoami I strip away security myths and build tools that operate at the low level—where real vulnerabilities live. No corporate gloss. No vendor FUD. Just raw technical truth.
+&gt; What I Do Logic Research: I dissect security concepts down to their OSI model foundations. If you’ve ever wondered why a security control actually works (or doesn’t), that’s where I operate.
+Tool Building: I build offensive security tools in Python that solve real problems—not proof-of-concepts that die in GitHub repos. Currently focused on automated reconnaissance and data exposure analysis.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="/whoami">
+<meta name="twitter:description" content="Logic Researcher &amp; Security Tool Builder - Revealing the Low-Level Truths of Security">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "/whoami",
+      "item": "https://nulx0x00.github.io/about/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://nulx0x00.github.io/" accesskey="h" title="NULx0 (Alt + H)">NULx0</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://nulx0x00.github.io/root/" title="Root">
+                    <span>Root</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nulx0x00.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nulx0x00.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nulx0x00.github.io/about/" title="About Me">
+                    <span class="active">About Me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    /whoami
+  </h1>
+</header>
+<div class="post-content"><h2 id="nulx0x00-whoami">nulx0x00:~$ whoami<a hidden class="anchor" aria-hidden="true" href="#nulx0x00-whoami">#</a></h2>
+<p>I strip away security myths and build tools that operate at the low level—where real vulnerabilities live. No corporate gloss. No vendor FUD. Just raw technical truth.</p>
+<h3 id="-what-i-do">&gt; What I Do<a hidden class="anchor" aria-hidden="true" href="#-what-i-do">#</a></h3>
+<p><strong>Logic Research</strong>: I dissect security concepts down to their OSI model foundations. If you&rsquo;ve ever wondered why a security control <em>actually</em> works (or doesn&rsquo;t), that&rsquo;s where I operate.</p>
+<p><strong>Tool Building</strong>: I build offensive security tools in Python that solve real problems—not proof-of-concepts that die in GitHub repos. Currently focused on automated reconnaissance and data exposure analysis.</p>
+<p><strong>Myth Stripping</strong>: The security industry is full of marketing nonsense. I cut through it with technical analysis and empirical testing.</p>
+<hr>
+<h2 id="nulx0x00-ls--la-projects">nulx0x00:~$ ls -la /projects<a hidden class="anchor" aria-hidden="true" href="#nulx0x00-ls--la-projects">#</a></h2>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 608 57"
+      >
+      <g transform='translate(8,16)'>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='0' y='36' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='8' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>w</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>w</text>
+<text text-anchor='middle' x='16' y='36' fill='currentColor' style='font-size:1em'>w</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='24' y='36' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='32' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='40' y='20' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='40' y='36' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='48' y='20' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='48' y='36' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='56' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='56' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='64' y='20' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='64' y='36' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='72' y='20' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='72' y='36' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>N</text>
+<text text-anchor='middle' x='96' y='20' fill='currentColor' style='font-size:1em'>O</text>
+<text text-anchor='middle' x='96' y='36' fill='currentColor' style='font-size:1em'>P</text>
+<text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='104' y='20' fill='currentColor' style='font-size:1em'>S</text>
+<text text-anchor='middle' x='104' y='36' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='112' y='20' fill='currentColor' style='font-size:1em'>I</text>
+<text text-anchor='middle' x='112' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>X</text>
+<text text-anchor='middle' x='120' y='36' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='128' y='20' fill='currentColor' style='font-size:1em'>R</text>
+<text text-anchor='middle' x='128' y='36' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='136' y='4' fill='currentColor' style='font-size:1em'>S</text>
+<text text-anchor='middle' x='136' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='136' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='144' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='144' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='152' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='152' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='152' y='36' fill='currentColor' style='font-size:1em'>A</text>
+<text text-anchor='middle' x='160' y='4' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='160' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='160' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='168' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='168' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='168' y='36' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='176' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='176' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='184' y='20' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='184' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='192' y='36' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='200' y='36' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='232' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='232' y='20' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='232' y='36' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='248' y='4' fill='currentColor' style='font-size:1em'>P</text>
+<text text-anchor='middle' x='248' y='20' fill='currentColor' style='font-size:1em'>D</text>
+<text text-anchor='middle' x='248' y='36' fill='currentColor' style='font-size:1em'>O</text>
+<text text-anchor='middle' x='256' y='4' fill='currentColor' style='font-size:1em'>I</text>
+<text text-anchor='middle' x='256' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='256' y='36' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='264' y='4' fill='currentColor' style='font-size:1em'>I</text>
+<text text-anchor='middle' x='264' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='264' y='36' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='272' y='20' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='272' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='280' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='280' y='20' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='280' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='288' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='288' y='20' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='288' y='36' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='296' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='296' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='296' y='36' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='304' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='304' y='20' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='304' y='36' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='312' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='312' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='312' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='320' y='4' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='328' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='328' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='328' y='36' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='336' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='336' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='336' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='344' y='4' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='344' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='344' y='36' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='352' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='352' y='36' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='360' y='4' fill='currentColor' style='font-size:1em'>&amp;</text>
+<text text-anchor='middle' x='360' y='20' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='360' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='368' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='368' y='36' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='376' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='376' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='376' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='384' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='384' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='384' y='36' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='392' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='400' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='400' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='400' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='408' y='20' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='408' y='36' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='416' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='416' y='36' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='424' y='4' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='424' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='424' y='36' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='432' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='432' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='432' y='36' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='440' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='440' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='440' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='448' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='448' y='20' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='448' y='36' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='456' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='456' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='464' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='464' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='464' y='36' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='472' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='472' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='472' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='480' y='20' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='488' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='488' y='36' fill='currentColor' style='font-size:1em'>P</text>
+<text text-anchor='middle' x='496' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='496' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='496' y='36' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='504' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='504' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='504' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='512' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='512' y='36' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='520' y='4' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='520' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='520' y='36' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='528' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='528' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='528' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='536' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='536' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='544' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='544' y='20' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='560' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='560' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='568' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='568' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='576' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='576' y='20' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='584' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='584' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='592' y='20' fill='currentColor' style='font-size:1em'>r</text>
+</g>
+
+    </svg>
+  
+</div>
+<hr>
+<h2 id="contact--links">Contact &amp; Links<a hidden class="anchor" aria-hidden="true" href="#contact--links">#</a></h2>
+<p><strong>GitHub</strong>: <a href="https://github.com/pr0jzer0">pr0jzer0</a><br>
+<strong>Email</strong>: <a href="mailto:your-email@protonmail.com">your-email@protonmail.com</a></p>
+<h3 id="interests">Interests<a hidden class="anchor" aria-hidden="true" href="#interests">#</a></h3>
+<ul>
+<li>Offensive security research</li>
+<li>Low-level protocol analysis</li>
+<li>Python tool development</li>
+</ul>
+<hr>
+<p><em>Open to collaboration on security research projects.</em></p>
+
+
+</div>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://nulx0x00.github.io/">NULx0</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
