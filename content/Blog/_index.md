@@ -1,5 +1,5 @@
 ---
-title: "/lab - Research"
+title: "/Blog - Research"
 date: 2025-01-31
 draft: false
 ---

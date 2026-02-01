@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>nulx0x00</title>
-    <link>https://nulx0x00.github.io/</link>
-    <description>Recent content on nulx0x00</description>
-    <generator>Hugo</generator>
+    <title>nulx0x00 on NULx0</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in nulx0x00 on NULx0</description>
+    <generator>Hugo -- 0.146.0</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://nulx0x00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

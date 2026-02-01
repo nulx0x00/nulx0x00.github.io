@@ -3,6 +3,13 @@ title: "NulX Sieve"
 date: 2025-01-31
 draft: false
 ---
+### Featured: [NulX Sieve](/sieve/)
+
+A high-performance Python tool for discovering PII exposure across file systems, databases, and APIs. Unlike bloated enterprise solutions, Sieve focuses on speed, accuracy, and actionable results.
+
+**Philosophy**: If your SIEM can't explain *why* an alert fired at the packet level, it's just expensive noise.
+
+
 
 # NulX Sieve - PII Discovery Tool
 
@@ -23,4 +30,4 @@ python sieve.py scan --path /var/www
 ```
 
 **Status**: Active development  
-**GitHub**: [pr0jzer0/nulx-sieve](https://github.com/pr0jzer0/nulx-sieve)
+**GitHub**: [pr0jzer0/nulx-sieve](https://github.com/nulx0x00/nulx-sieve)
