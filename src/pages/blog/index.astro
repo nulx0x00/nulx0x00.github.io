@@ -1,0 +1,112 @@
+---
+import Base from '../../layouts/Base.astro';
+
+// getCollection works automatically once you have .md files in src/content/blog/
+// For now we define posts statically — swap for getCollection() when ready
+const posts = [
+  {
+    slug:    'IDEvsTerminal',
+    title:   'Why I’m Learning Java Through the Terminal (The Hard Way)',
+    date:    'Apr 28, 2025',
+    tag:     'Learning',
+    tagType: 'research',
+    excerpt: 'Learning Java in the terminal trains you to read errors carefully, reason instead of guessing, and fix root causes rather than symptoms. This is how real engineers think.',
+    readTime: '5 min',
+  },
+  // {
+  //   slug:    'idor-methodology',
+  //   title:   'Hunting IDORs at Scale: My Methodology for Web Apps',
+  //   date:    'Apr 12, 2025',
+  //   tag:     'VULN RESEARCH',
+  //   tagType: 'research',
+  //   excerpt: 'A breakdown of the exact methodology I used to find my first $500 IDOR. Includes recon phase, endpoint enumeration, and how to identify predictable object references in REST APIs.',
+  //   readTime: '12 min',
+  // },
+  // {
+  //   slug:    'rsa-fermat',
+  //   title:   'CryptoHack Notes: RSA Factoring with Fermat\'s Method',
+  //   date:    'Mar 30, 2025',
+  //   tag:     'CRYPTOGRAPHY',
+  //   tagType: 'crypto',
+  //   excerpt: 'Deep dive into why RSA breaks when p and q are close in value. Implemented Fermat\'s factoring algorithm in Python and broke a challenge key in under 2 seconds.',
+  //   readTime: '10 min',
+  // },
+  // {
+  //   slug:    'picoctf-2025-web',
+  //   title:   'PicoCTF 2025 — Web Category Full Solve Notes',
+  //   date:    'Mar 15, 2025',
+  //   tag:     'CTF',
+  //   tagType: 'ctf',
+  //   excerpt: 'Solved all 8 web challenges. Highlights include a JWT alg:none attack, a Flask SSTI chain, and a fun cookie deserialization payload that took way too long to craft.',
+  //   readTime: '15 min',
+  // },
+];
+---
+
+<Base title="Blog — NulX 0x00">
+  <div class="container page-content">
+    <div class="prompt">root@NulX0x00:~$ <span>ls ./blog --sort=date</span></div>
+    <h2>NulX 0x00</h2>
+    <p class="page-sub">
+      Write-ups, vulnerability research, CTF solves, and notes from the journey.
+      All findings are responsibly disclosed before publication.
+    </p>
+
+    <div class="posts">
+      {posts.map(post => (
+        <a href={`/blog/${post.slug}`} class="post-card">
+          <div class="post-meta">
+            <span class={`post-tag tag-${post.tagType}`}>{post.tag}</span>
+            <span class="post-date">{post.date}</span>
+            <span class="post-read">{post.readTime} read</span>
+          </div>
+          <h3 class="post-title">{post.title}</h3>
+          <p class="post-excerpt">{post.excerpt}</p>
+          <span class="post-link">read more →</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="rss-note">
+      <span style="color:var(--green)">$</span>
+      Subscribe via <a href="/rss.xml">RSS</a> · Write-ups are published in Markdown from the terminal
+    </div>
+  </div>
+</Base>
+
+<style>
+.page-content { padding: 4rem 1.5rem; }
+h2 { margin-bottom: 0.4rem; }
+.page-sub { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 3rem; max-width: 560px; }
+
+.posts { display: flex; flex-direction: column; gap: 12px; }
+.post-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.3rem 1.5rem;
+  display: block;
+  color: inherit;
+  transition: border-color 0.15s;
+}
+.post-card:hover { border-color: var(--border-hi); opacity: 1; }
+
+.post-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 0.7rem; flex-wrap: wrap; }
+.post-tag {
+  font-size: 0.6rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+}
+.tag-htb      { color: var(--green);  background: rgba(57,255,106,0.1);   border: 1px solid var(--border-hi); }
+.tag-research { color: var(--red);    background: rgba(255,59,59,0.1);    border: 1px solid rgba(255,59,59,0.3); }
+.tag-crypto   { color: #a78bfa;       background: rgba(167,139,250,0.1);  border: 1px solid rgba(167,139,250,0.3); }
+.tag-ctf      { color: var(--amber);  background: rgba(255,184,0,0.1);    border: 1px solid rgba(255,184,0,0.25); }
+
+.post-date, .post-read { font-size: 0.7rem; color: var(--text-dim); }
+.post-title { font-size: 1rem; color: #fff; margin-bottom: 0.5rem; font-family: var(--mono); font-weight: 500; line-height: 1.5; }
+.post-excerpt { font-size: 0.8rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 0.8rem; }
+.post-link { font-size: 0.75rem; color: var(--green); }
+
+.rss-note { margin-top: 2rem; font-size: 0.75rem; color: var(--text-dim); }
+</style>

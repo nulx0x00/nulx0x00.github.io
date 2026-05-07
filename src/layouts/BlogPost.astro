@@ -1,0 +1,90 @@
+---
+import Base from './Base.astro';
+
+const { frontmatter } = Astro.props;
+const { title, date, tag, readTime, description } = frontmatter;
+
+const tagTypes: Record<string,string> = {
+  'HTB WRITE-UP':  'htb',
+  'VULN RESEARCH': 'research',
+  'CRYPTOGRAPHY':  'crypto',
+  'CTF':           'ctf',
+};
+const tagClass = tagTypes[tag] || 'ctf';
+---
+
+<Base title={title} description={description}>
+  <div class="container post-content">
+    <a href="/blog" class="back-link">← back to blog</a>
+
+    <header class="post-header">
+      <div class="post-meta">
+        <span class={`post-tag tag-${tagClass}`}>{tag}</span>
+        <span class="meta-item">{date}</span>
+        {readTime && <span class="meta-item">{readTime} read</span>}
+      </div>
+      <h1>{title}</h1>
+    </header>
+
+    <article class="prose">
+      <slot />
+    </article>
+
+    <div class="post-footer">
+      <p class="footer-note">
+        Found an issue with this write-up?
+        <a href="https://twitter.com/nulx0x00" target="_blank" rel="noopener">DM me on X</a>
+        or open an issue on <a href="https://github.com/nulx0x00/nulx0x00.github.io/src/pages/blog/IDEvsTerminal" target="_blank" rel="noopener">GitHub</a>.
+      </p>
+      <a href="/blog" class="back-link">← back to blog</a>
+    </div>
+  </div>
+</Base>
+
+<style>
+.post-content { padding: 3rem 1.5rem 5rem; max-width: 720px; }
+
+.back-link { font-size: 0.78rem; color: var(--text-dim); display: inline-block; margin-bottom: 2rem; }
+.back-link:hover { color: var(--green); opacity: 1; }
+
+.post-header { margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
+.post-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; flex-wrap: wrap; }
+.post-tag {
+  font-size: 0.6rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+}
+.tag-htb      { color: var(--green);  background: rgba(57,255,106,0.1);  border: 1px solid var(--border-hi); }
+.tag-research { color: var(--red);    background: rgba(255,59,59,0.1);   border: 1px solid rgba(255,59,59,0.3); }
+.tag-crypto   { color: #a78bfa;       background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.3); }
+.tag-ctf      { color: var(--amber);  background: rgba(255,184,0,0.1);   border: 1px solid rgba(255,184,0,0.25); }
+
+.meta-item { font-size: 0.72rem; color: var(--text-dim); }
+h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); line-height: 1.3; }
+
+/* ── Prose styles ── */
+.prose { line-height: 1.85; font-size: 0.9rem; }
+.prose h2 { font-size: 1.3rem; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.prose h3 { font-size: 1rem; margin: 2rem 0 0.75rem; color: var(--green); }
+.prose p  { margin-bottom: 1.25rem; color: var(--text); }
+.prose ul, .prose ol { margin: 0 0 1.25rem 1.5rem; }
+.prose li { margin-bottom: 0.4rem; color: var(--text); }
+.prose blockquote {
+  border-left: 3px solid var(--green-dim);
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+  background: var(--bg3);
+  border-radius: 0 6px 6px 0;
+  color: var(--text-dim);
+  font-style: italic;
+}
+.prose img { max-width: 100%; border-radius: 6px; border: 1px solid var(--border); margin: 1.5rem 0; }
+.prose hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+.prose table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 1.5rem 0; }
+.prose th { background: var(--bg3); border: 1px solid var(--border); padding: 8px 12px; text-align: left; color: var(--text-dim); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.prose td { border: 1px solid var(--border); padding: 8px 12px; color: var(--text); }
+
+.post-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.footer-note { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 1rem; }
+</style>

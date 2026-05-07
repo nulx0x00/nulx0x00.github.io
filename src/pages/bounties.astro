@@ -1,0 +1,183 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Update this array with your real bounties
+const bounties = [
+  // {
+  //   target:   'SaaS Platform',
+  //   type:     'Auth Bypass',
+  //   severity: 'CRITICAL',
+  //   platform: 'YesWeHack',
+  //   date:     'May 2025',
+  //   payout:   1200,
+  //   status:   'paid',
+  // },
+  // {
+  //   target:   'FinTech Corp',
+  //   type:     'IDOR',
+  //   severity: 'HIGH',
+  //   platform: 'HackerOne',
+  //   date:     'Jun 2025',
+  //   payout:   500,
+  //   status:   'paid',
+  // },
+  // {
+  //   target:   'Banking App',
+  //   type:     'SQLi (Blind)',
+  //   severity: 'HIGH',
+  //   platform: 'HackerOne',
+  //   date:     'Jul 2025',
+  //   payout:   400,
+  //   status:   'paid',
+  // },
+  // {
+  //   target:   'E-Commerce Co',
+  //   type:     'XSS (Stored)',
+  //   severity: 'MEDIUM',
+  //   platform: 'Bugcrowd',
+  //   date:     'Aug 2025',
+  //   payout:   300,
+  //   status:   'paid',
+  // },
+];
+
+const total = bounties.reduce((sum, b) => sum + b.payout, 0);
+const valid = bounties.filter(b => b.status === 'paid').length;
+
+const sevClass: Record<string,string> = {
+  CRITICAL: 'sev-crit',
+  HIGH:     'sev-high',
+  MEDIUM:   'sev-med',
+  LOW:      'sev-low',
+};
+---
+
+<Base title="Bounties">
+  <div class="container page-content">
+    <div class="prompt">root@NulX0x00:~$ <span>cat ledger.csv | sort -k4 -rn</span></div>
+    <h2>Bounty Ledger</h2>
+    <p class="page-sub">
+      Transparency about the bug bounty journey. Every valid submission and payout tracked here.
+    </p>
+
+    <div class="summary-grid">
+      <div class="sum-card">
+        <p class="sum-label">Total Earned</p>
+        <p class="sum-value">${total.toLocaleString()}</p>
+      </div>
+      <div class="sum-card">
+        <p class="sum-label">Valid Reports</p>
+        <p class="sum-value">{valid}</p>
+      </div>
+      <div class="sum-card">
+        <p class="sum-label">Platforms</p>
+        <p class="sum-value">0</p>
+      </div>
+      <div class="sum-card">
+        <p class="sum-label">Avg Payout</p>
+        <p class="sum-value">${Math.round(total / valid).toLocaleString()}</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <p class="section-label">submissions</p>
+      <div class="table-wrapper">
+        <table class="ledger-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Target</th>
+              <th>Vulnerability</th>
+              <th>Severity</th>
+              <th>Platform</th>
+              <th>Payout</th>
+            </tr>
+          </thead>
+          <tbody>
+            {bounties.map(b => (
+              <tr>
+                <td class="dim">{b.date}</td>
+                <td>{b.target}</td>
+                <td class="dim">{b.type}</td>
+                <td><span class={`severity ${sevClass[b.severity]}`}>{b.severity}</span></td>
+                <td class="dim">{b.platform}</td>
+                <td class="payout">${b.payout.toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="disclosure-note card">
+      <p class="dn-head">// disclosure policy</p>
+      <p>All targets listed have either publicly disclosed these vulnerabilities or given permission for general
+      disclosure. Specific details (endpoints, PoCs) are withheld per program rules. Write-ups are published
+      only after vendor acknowledgement and remediation.</p>
+    </div>
+  </div>
+</Base>
+
+<style>
+.page-content { padding: 4rem 1.5rem; }
+h2 { margin-bottom: 0.4rem; }
+.page-sub { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 2.5rem; max-width: 560px; }
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-bottom: 3rem;
+}
+.sum-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+.sum-label { font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.sum-value { font-size: 1.6rem; font-weight: 700; color: var(--green); }
+
+.section { margin-bottom: 2.5rem; }
+.table-wrapper { overflow-x: auto; }
+.ledger-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.ledger-table th {
+  text-align: left;
+  color: var(--text-dim);
+  font-weight: 400;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0 12px 10px;
+  border-bottom: 1px solid var(--border);
+}
+.ledger-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.ledger-table tr:hover td { background: rgba(57,255,106,0.03); }
+.dim { color: var(--text-dim); }
+.payout { color: var(--green); font-weight: 500; }
+
+.severity {
+  display: inline-block;
+  font-size: 0.62rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+}
+.sev-crit { background: rgba(255,59,59,0.15); color: var(--red); border: 1px solid rgba(255,59,59,0.3); }
+.sev-high { background: rgba(255,184,0,0.12); color: var(--amber); border: 1px solid rgba(255,184,0,0.25); }
+.sev-med  { background: rgba(57,255,106,0.1); color: var(--green); border: 1px solid var(--border-hi); }
+.sev-low  { background: var(--bg3); color: var(--text-dim); border: 1px solid var(--border); }
+
+.disclosure-note {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  border-left: 2px solid var(--green-dim);
+  border-radius: 0 8px 8px 0;
+}
+.dn-head { color: var(--green-dim); margin-bottom: 0.5rem; font-size: 0.72rem; }
+</style>

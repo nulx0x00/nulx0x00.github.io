@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro';
+
+/**
+ * GitHub API integration
+ * Replace GITHUB_USERNAME with your actual username.
+ * At build time, Astro fetches your pinned repos automatically.
+ * You can also set the GITHUB_TOKEN env var for higher rate limits.
+ *
+ * To enable: set GITHUB_USERNAME in your .env file or Vercel env vars.
+ */
+const GITHUB_USERNAME =  'nulx0x00';
+const GITHUB_TOKEN    = import.meta.env.GITHUB_TOKEN;
+
+let repos: any[] = [];
+let fetchError = false;
+
+try {
+  const headers: HeadersInit = { 'Accept': 'application/vnd.github+json' };
+  if (GITHUB_TOKEN) headers['Authorization'] = `Bearer ${GITHUB_TOKEN}`;
+
+  const res = await fetch(
+      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6&type=public`,
+      { headers }
+  );
+  if (res.ok) {
+    const data = await res.json();
+    repos = data.filter((r: any) => !r.fork).slice(0, 6);
+  } else {
+    fetchError = true;
+  }
+} catch {
+  fetchError = true;
+}
+
+// Fallback data shown when GitHub API is unavailable (e.g. during dev with no token)
+const fallback = [
+  {
+    name: 'idor-scanner',
+    description: 'Automated IDOR detection tool for REST APIs. Fuzzes object IDs across authenticated endpoints and flags unexpected 200 responses from other users data.',
+    html_url: '#',
+    stargazers_count: 84,
+    language: 'Python',
+    topics: ['bugbounty', 'idor', 'api-security'],
+  },
+  {
+    name: 'crypto-toolkit',
+    description: 'Personal toolkit for CTF crypto challenges. Includes Fermat factoring, padding oracle attacks, frequency analysis, and RSA helpers.',
+    html_url: '#',
+    stargazers_count: 41,
+    language: 'Python',
+    topics: ['cryptography', 'ctf', 'cryptohack'],
+  },
+  {
+    name: 'pentest-notes',
+    description: 'Living document of my pentesting methodology, cheat sheets, and tool configs. Covers web, network, and AD attacks. Used daily during HTB and OSCP prep.',
+    html_url: '#',
+    stargazers_count: 127,
+    language: 'Markdown',
+    topics: ['oscp', 'htb', 'pentest'],
+  },
+];
+
+const displayRepos = fetchError || repos.length === 0 ? fallback : repos;
+---
+
+<Base title="Projects">
+  <div class="container page-content">
+    <div class="prompt">root@NulX0x00:~$ <span>gh repo list --public --sort=updated</span></div>
+    <h2>Projects & Code</h2>
+    <p class="page-sub">
+      Tools, scripts, and open-source work. Connected directly to GitHub —
+      updates automatically whenever I push new code.
+    </p>
+
+    {fetchError && (
+        <p class="api-note">
+          // GitHub API unavailable or rate-limited — showing cached data.
+          Set <code>GITHUB_USERNAME</code> and optionally <code>GITHUB_TOKEN</code> in your env vars.
+        </p>
+    )}
+
+    <section class="section">
+      <p class="section-label">pinned repositories</p>
+      <div class="repo-grid">
+        {displayRepos.map((repo: any) => (
+            <a href={repo.html_url} target="_blank" rel="noopener" class="repo-card card">
+              <div class="repo-header">
+              <span class="repo-name">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" style="margin-right:6px;vertical-align:middle;color:var(--text-dim)">
+                  <path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
+                </svg>
+                {repo.name}
+              </span>
+                {repo.stargazers_count > 0 && (
+                    <span class="repo-stars">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/></svg>
+                      {repo.stargazers_count}
+                </span>
+                )}
+              </div>
+              <p class="repo-desc">{repo.description || 'No description provided.'}</p>
+              <div class="repo-footer">
+                {repo.language && <span class="lang-badge">{repo.language}</span>}
+                {(repo.topics || []).slice(0, 3).map((t: string) => (
+                    <span class="topic-badge">{t}</span>
+                ))}
+              </div>
+            </a>
+        ))}
+      </div>
+    </section>
+
+    <div class="gh-link">
+      <a href={`https://github.com/${GITHUB_USERNAME}`} target="_blank" rel="noopener" class="btn-ghost">
+        view all repos on GitHub →
+      </a>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .page-content { padding: 4rem 1.5rem; }
+  h2 { margin-bottom: 0.4rem; }
+  .page-sub { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 2.5rem; max-width: 560px; }
+
+  .api-note { font-size: 0.75rem; color: var(--amber); background: rgba(255,184,0,0.08); border: 1px solid rgba(255,184,0,0.2); border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 2rem; }
+
+  .section { margin-bottom: 2.5rem; }
+  .repo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; }
+  .repo-card { color: inherit; display: flex; flex-direction: column; }
+
+  .repo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+  .repo-name { font-size: 0.88rem; color: var(--green); font-weight: 500; }
+  .repo-stars { font-size: 0.72rem; color: var(--amber); display: flex; align-items: center; gap: 4px; }
+  .repo-desc { font-size: 0.78rem; color: var(--text-dim); line-height: 1.7; flex: 1; margin-bottom: 0.9rem; }
+  .repo-footer { display: flex; gap: 6px; flex-wrap: wrap; }
+
+  .lang-badge {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: rgba(57,255,106,0.1);
+    color: var(--green);
+    border: 1px solid var(--border-hi);
+  }
+  .topic-badge {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: var(--bg2);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+  }
+
+  .gh-link { margin-top: 1.5rem; }
+  .btn-ghost {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    padding: 0.55rem 1.2rem;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--green);
+    border: 1px solid var(--border-hi);
+    transition: background 0.15s;
+  }
+  .btn-ghost:hover { background: var(--green-glow); opacity: 1; }
+</style>

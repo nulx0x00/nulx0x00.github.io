@@ -1,0 +1,157 @@
+---
+import Base from '../layouts/Base.astro';
+
+const tags = [
+  'Penetration Testing', 'Bug Bounty', 'CTF Player',
+  'Web App Security', 'Applied Cryptography', 'Red Team',
+  'Hack The Box', 'TryHackMe', 'OSCP Prep',
+];
+---
+
+<Base title="Home">
+  <section class="hero container">
+    <p class="prompt">root@nulx0x00:~$ <span>whoami</span></p>
+    <h1>NulX<br><em>SECURITY.</em></h1>
+    <p class="role">// B.Tech CS Student · Red Teamer · Bug Hunter · CTF Player</p>
+    <p class="bio">
+      Security researcher in the making. Breaking things ethically,
+      documenting everything, building in public. Focused on web app
+      pentesting, applied cryptography, and low-level exploitation.
+    </p>
+    <div class="tags">
+      {tags.map(t => <span class="tag">{t}</span>)}
+    </div>
+    <div class="cta-row">
+      <a href="/journey" class="btn-primary">view journey →</a>
+      <a href="/blog" class="btn-ghost">read write-ups →</a>
+    </div>
+  </section>
+
+  <section class="stats-section container">
+    <p class="section-label">quick stats</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <p class="stat-label">Try Hack Me Rank</p>
+        <p class="stat-value">Pro Hacker</p>
+        <p class="stat-sub">top 55% globally</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Valid Bugs</p>
+        <p class="stat-value">0</p>
+        <p class="stat-sub">across H1, Bugcrowd, YWH</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Bounties Earned</p>
+        <p class="stat-value">$0</p>
+        <p class="stat-sub">and climbing</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">CTF Solves</p>
+        <p class="stat-value">35+</p>
+        <p class="stat-sub">web, crypto, pwn, misc</p>
+      </div>
+    </div>
+    <p class="status-line">
+      <span style="color:var(--green)">→</span>
+      Currently grinding CTF & active on Try Hack Me & Hack The Box
+      <span class="cursor"></span>
+    </p>
+  </section>
+
+  <!--<section class="recent-section container">-->
+  <!--  <p class="section-label">latest write-ups</p>-->
+  <!--  <div class="recent-grid">-->
+  <!--    <a href="/blog/blunder-htb" class="recent-card">-->
+  <!--      <span class="rc-tag">HTB</span>-->
+  <!--      <p class="rc-title">Rooting "Blunder" — Bludit CMS RCE via Bruteforce Bypass</p>-->
+  <!--      <p class="rc-date">Apr 28, 2025</p>-->
+  <!--    </a>-->
+  <!--    <a href="/blog/idor-methodology" class="recent-card">-->
+  <!--      <span class="rc-tag">RESEARCH</span>-->
+  <!--      <p class="rc-title">Hunting IDORs at Scale: My Methodology for Web Apps</p>-->
+  <!--      <p class="rc-date">Apr 12, 2025</p>-->
+  <!--    </a>-->
+  <!--    <a href="/blog/rsa-fermat" class="recent-card">-->
+  <!--      <span class="rc-tag">CRYPTO</span>-->
+  <!--      <p class="rc-title">CryptoHack Notes: RSA Factoring with Fermat's Method</p>-->
+  <!--      <p class="rc-date">Mar 30, 2025</p>-->
+  <!--    </a>-->
+  <!--  </div>-->
+  <!--</section>-->
+</Base>
+
+<style>
+.hero {
+  padding: 6rem 1.5rem 4rem;
+}
+h1 em { color: var(--green); font-style: normal; }
+.role {
+  color: var(--green);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  margin: 0.75rem 0 1.25rem;
+}
+.bio {
+  max-width: 560px;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 2rem; }
+.cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary, .btn-ghost {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-primary {
+  background: var(--green);
+  color: #000;
+  font-weight: 700;
+  border: 1px solid var(--green);
+}
+.btn-primary:hover { background: transparent; color: var(--green); opacity: 1; }
+.btn-ghost {
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--border-hi);
+}
+.btn-ghost:hover { background: var(--green-glow); opacity: 1; }
+
+.stats-section { padding: 0 1.5rem 4rem; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+.stat-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.1rem 1.3rem;
+}
+.stat-label { font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.stat-value { font-size: 1.5rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 0.3rem; }
+.stat-sub { font-size: 0.68rem; color: var(--green); }
+.status-line { font-size: 0.78rem; color: var(--text-dim); }
+
+.recent-section { padding: 0 1.5rem 4rem; }
+.recent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+.recent-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  display: block;
+  transition: border-color 0.15s;
+  color: inherit;
+}
+.recent-card:hover { border-color: var(--border-hi); opacity: 1; }
+.rc-tag { font-size: 0.6rem; color: var(--amber); letter-spacing: 0.1em; background: rgba(255,184,0,0.1); border: 1px solid rgba(255,184,0,0.25); padding: 2px 7px; border-radius: 3px; }
+.rc-title { font-size: 0.82rem; color: #fff; margin: 0.6rem 0 0.3rem; line-height: 1.5; }
+.rc-date { font-size: 0.65rem; color: var(--text-dim); }
+</style>

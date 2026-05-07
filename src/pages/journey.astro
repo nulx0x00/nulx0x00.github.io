@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+
+const platforms = [
+  { name: 'Hack The Box',  icon: '⬡', rank: 'Beginner ',  detail: '0 machines rooted',      pct: 72 },
+  { name: 'TryHackMe',    icon: '◈', rank: 'Top 55%',       detail: '5+ rooms completed',    pct: 85 },
+  { name: 'CryptoHack',   icon: '◎', rank: '0 pts',    detail: '0 challenges solved',    pct: 55 },
+];
+
+const timeline = [
+  {
+    date: 'Jan 2024',
+    title: 'Started B.Tech CS — Security specialization',
+    desc: 'Enrolled in university. Discovered ethical hacking on TryHackMe Jan 2025. Never looked back.',
+  },
+  {
+    date: 'Feb 2025',
+    title: 'Completed TryHackMe "Jr Penetration Tester" path',
+    desc: 'First structured learning path. Covered web hacking, network scanning, privilege escalation, and Active Directory basics.',
+  },
+  {
+    date: 'May-June 2026',
+    title: 'First HTB machine rooted — "Lame"',
+    desc: 'Classic Samba exploit (MS-RPC). Wrote my first real technical write-up and published it on the blog.',
+    current: true,
+  },
+  // {
+  //   date: 'Apr 2025',
+  //   title: 'Achieved HTB Pro Hacker rank',
+  //   desc: 'Rooted 48 machines total. Moved focus toward active machines and retiring machines only.',
+  // },
+  // {
+  //   date: 'Jun 2025',
+  //   title: 'First valid HackerOne submission — $500 payout',
+  //   desc: 'IDOR vulnerability in a fintech platform\'s API. First real bug bounty income and validation of the methodology.',
+  // },
+  // {
+  //   date: 'Now',
+  //   title: 'OSCP prep + active bug bounty hunting',
+  //   desc: 'Grinding the PWK lab machines and hunting high-severity web vulns on H1 private programs.',
+  //   current: true,
+  // },
+];
+---
+
+<Base title="Journey">
+  <div class="container page-content">
+    <div class="prompt">root@NulX0x00:~$ <span>cat journey.log</span></div>
+    <h2>The Journey</h2>
+    <p class="page-sub">Tracking the grind — platforms, milestones, and what comes next.</p>
+
+    <section class="section">
+      <p class="section-label">platform stats</p>
+      <div class="platforms">
+        {platforms.map(p => (
+          <div class="plat-card card">
+            <div class="plat-row">
+              <span class="plat-icon">{p.icon}</span>
+              <div class="plat-info">
+                <span class="plat-name">{p.name}</span>
+                <span class="plat-detail">{p.detail}</span>
+              </div>
+              <span class="plat-rank">{p.rank}</span>
+            </div>
+            <div class="prog-track">
+              <div class="prog-fill" style={`width:${p.pct}%`}></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-label">timeline</p>
+      <div class="timeline">
+        {timeline.map((item, i) => (
+          <div class={`tl-item ${item.current ? 'current' : ''}`}>
+            <div class="tl-left">
+              <div class="tl-dot"></div>
+              {i < timeline.length - 1 && <div class="tl-line"></div>}
+            </div>
+            <div class="tl-body">
+              <p class="tl-date">{item.date}</p>
+              <h3 class="tl-title">{item.title}</h3>
+              <p class="tl-desc">{item.desc}</p>
+              {item.current && <span class="cursor" style="margin-top:0.5rem;display:inline-block"></span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+.page-content { padding: 4rem 1.5rem; }
+.prompt { margin-bottom: 0.5rem; }
+h2 { margin-bottom: 0.4rem; }
+.page-sub { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 3rem; }
+.section { margin-bottom: 3.5rem; }
+
+.platforms { display: flex; flex-direction: column; gap: 10px; }
+.plat-card { padding: 1rem 1.25rem; }
+.plat-row { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+.plat-icon { font-size: 1.1rem; color: var(--amber); width: 24px; text-align: center; }
+.plat-info { flex: 1; display: flex; flex-direction: column; gap: 1px; }
+.plat-name { font-size: 0.9rem; color: #fff; font-weight: 500; }
+.plat-detail { font-size: 0.7rem; color: var(--text-dim); }
+.plat-rank { font-size: 0.75rem; color: var(--green); }
+
+.timeline { display: flex; flex-direction: column; }
+.tl-item { display: flex; gap: 16px; }
+.tl-left { display: flex; flex-direction: column; align-items: center; width: 20px; flex-shrink: 0; }
+.tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 6px; }
+.tl-line { width: 1px; flex: 1; background: var(--border); min-height: 20px; }
+.current .tl-dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
+.tl-body { padding-bottom: 2rem; }
+.tl-date { font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.1em; margin-bottom: 2px; text-transform: uppercase; }
+.tl-title { font-size: 0.95rem; color: #fff; margin-bottom: 0.35rem; font-family: var(--mono); font-weight: 500; }
+.tl-desc { font-size: 0.8rem; color: var(--text-dim); line-height: 1.7; }
+</style>
