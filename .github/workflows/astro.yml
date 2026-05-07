@@ -1,19 +1,15 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Triggers the workflow on push events to the "main" branch
   push:
     branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -32,14 +28,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          # ❌ Caching removed here so it stops throwing errors
 
       - name: Install dependencies
-        run: npm ci
+        # Switched to npm install which is more forgiving if the lockfile is missing
+        run: npm install
 
       - name: Build the Astro project
         run: npm run build
         env:
-          # Your project requires these for the GitHub API integration
           GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -49,8 +46,9 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/ # This is where Astro outputs the built site
+          path: dist/
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
